@@ -1,7 +1,7 @@
 package me.prashant.cleannews.domain.repository
 
-import me.prashant.cleannews.domain.model.ArticleDomainModel
+import me.prashant.cleannews.domain.model.NewsDomainModel
 
 interface NewsRepository {
-    suspend fun getNews(): List<ArticleDomainModel>
+    suspend fun getNews(page: Int): NewsDomainModel
 }

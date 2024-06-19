@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.room.runtime)
     kapt(libs.room.compiler)
     implementation(libs.room.ktx)
+    implementation(libs.glide)
 
     // Hilt dependencies
     implementation(libs.hilt.android)

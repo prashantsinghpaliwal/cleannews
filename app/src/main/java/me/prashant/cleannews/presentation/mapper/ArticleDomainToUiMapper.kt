@@ -1,8 +1,8 @@
 package me.prashant.cleannews.presentation.mapper
 
+import me.prashant.cleannews.util.core.Mapper
 import me.prashant.cleannews.domain.model.ArticleDomainModel
 import me.prashant.cleannews.presentation.model.ArticleUiModel
-import me.prashant.cleannews.util.core.Mapper
 import javax.inject.Inject
 
 class ArticleDomainToUiMapper

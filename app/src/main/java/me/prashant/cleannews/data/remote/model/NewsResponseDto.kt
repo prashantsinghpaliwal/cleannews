@@ -2,13 +2,13 @@ package me.prashant.cleannews.data.remote.model
 
 // DTO - Data Transfer Object
 
-data class NewsResponseDto(
+ data class NewsResponseDto(
     val status: String,
     val totalResults: Int,
     val articles: List<ArticleDto>,
 )
 
-data class ArticleDto(
+ data class ArticleDto(
     val source: SourceDto,
     val author: String?,
     val title: String,
@@ -19,7 +19,7 @@ data class ArticleDto(
     val content: String?,
 )
 
-data class SourceDto(
+ data class SourceDto(
     val id: String?,
     val name: String,
 )
