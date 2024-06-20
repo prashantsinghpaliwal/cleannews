@@ -2,26 +2,26 @@ package me.prashant.cleannews.presentation.ui.newslisting
 
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import me.prashant.cleannews.R
-import me.prashant.cleannews.databinding.ActivityMainBinding
+import me.prashant.cleannews.databinding.FragmentHomeNewsListingBinding
 import me.prashant.cleannews.presentation.states.ArticleListState
 import me.prashant.cleannews.presentation.viewmodel.NewsViewModel
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class NewsListingFragment : Fragment() {
+    private var _binding: FragmentHomeNewsListingBinding? = null
+    private val binding get() = _binding!!
+
     private val newsViewModel: NewsViewModel by viewModels()
 
     @Inject
@@ -48,12 +48,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        defaultAndroid()
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        _binding = FragmentHomeNewsListingBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?,
+    ) {
+        super.onViewCreated(view, savedInstanceState)
         setUpObservers()
         hitApi()
         setUpUI()
@@ -61,27 +69,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpUI() {
         binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = LinearLayoutManager(requireContext())
             adapter = newsAdapter
             addOnScrollListener(scrollListener)
-        }
-
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_home -> {
-                    // Handle home navigation
-                    true
-                }
-                R.id.navigation_search -> {
-                    // Handle dashboard navigation
-                    true
-                }
-                R.id.navigation_favorite -> {
-                    // Handle notifications navigation
-                    true
-                }
-                else -> false
-            }
         }
     }
 
@@ -113,11 +103,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun defaultAndroid() {
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
