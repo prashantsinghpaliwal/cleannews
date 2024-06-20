@@ -1,7 +1,9 @@
 package me.prashant.cleannews.util.core
 
 sealed class Resource<out T> {
-    data object Loading : Resource<Nothing>()
+    data class Loading(
+        val isLoading: Boolean,
+    ) : Resource<Nothing>()
 
     data class Success<out T>(
         val data: T,

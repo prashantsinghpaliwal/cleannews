@@ -23,7 +23,7 @@ class NewsViewModel
         private val getNewsUseCase: GetNewsUseCase,
         private val newsMapper: NewsDomainToUiMapper,
     ) : ViewModel() {
-        private val _state = MutableStateFlow<ArticleListState>(ArticleListState.Loading)
+        private val _state = MutableStateFlow<ArticleListState>(ArticleListState.Loading(false))
         val state: StateFlow<ArticleListState> get() = _state
 
         var isLoading = false
@@ -43,7 +43,7 @@ class NewsViewModel
                         _state.value = ArticleListState.Error(e.message ?: "An error occurred")
                     }.collect { result ->
                         when (result) {
-                            is Resource.Loading -> _state.value = ArticleListState.Loading
+                            is Resource.Loading -> _state.value = ArticleListState.Loading(result.isLoading)
                             is Resource.Success -> {
                                 articleListDomainModel =
                                     if (currentPage == 1) {

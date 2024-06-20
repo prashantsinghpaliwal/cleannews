@@ -15,7 +15,7 @@ class GetNewsUseCase
         operator fun invoke(page: Int): Flow<Resource<NewsDomainModel>> =
             flow {
                 try {
-                    emit(Resource.Loading)
+                    emit(Resource.Loading(true))
                     val articles = newsRepository.getNews(page)
                     emit(Resource.Success(articles))
                 } catch (e: Exception) {
