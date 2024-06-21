@@ -30,9 +30,9 @@ class NewsViewModel
         private var currentPage = 1
 
         private var articleListDomainModel = listOf<ArticleDomainModel>()
-        var uiModel: NewsUIModel? = null
+        private var uiModel: NewsUIModel? = null
 
-        fun ifMoreDataPresent(): Boolean = (uiModel?.totalResults?: 0) > articleListDomainModel.size
+        fun ifMoreDataPresent(): Boolean = (uiModel?.totalResults ?: 0) > articleListDomainModel.size
 
         fun fetchNews() {
             viewModelScope.launch {
@@ -43,7 +43,10 @@ class NewsViewModel
                         _state.value = ArticleListState.Error(e.message ?: "An error occurred")
                     }.collect { result ->
                         when (result) {
-                            is Resource.Loading -> _state.value = ArticleListState.Loading(result.isLoading)
+                            is Resource.Loading ->
+                                _state.value =
+                                    ArticleListState.Loading(result.isLoading)
+
                             is Resource.Success -> {
                                 articleListDomainModel =
                                     if (currentPage == 1) {
