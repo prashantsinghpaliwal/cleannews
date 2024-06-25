@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import me.prashant.cleannews.R
 import me.prashant.cleannews.databinding.FragmentHomeNewsListingBinding
 import me.prashant.cleannews.presentation.states.ArticleListState
 import me.prashant.cleannews.presentation.viewmodel.NewsViewModel
@@ -71,6 +73,10 @@ class NewsListingFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = newsAdapter
             addOnScrollListener(scrollListener)
+        }
+
+        binding.searchAction.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
         }
     }
 

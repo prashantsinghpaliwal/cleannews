@@ -11,4 +11,10 @@ interface NewsApiService {
         @Query("apiKey") apiKey: String,
         @Query("page") page: Int,
     ): NewsResponseDto
+
+    @GET("everything")
+    suspend fun searchNews(
+        @Query("q") query: String,
+        @Query("apiKey") apiKey: String,
+    ): NewsResponseDto
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import me.prashant.cleannews.R
 import me.prashant.cleannews.databinding.ItemNewsBinding
 import me.prashant.cleannews.presentation.model.ArticleUiModel
 import javax.inject.Inject
@@ -48,7 +49,9 @@ class NewsAdapter
                     time.text = article.publishedAt
                     Glide
                         .with(binding.root.context)
-                        .setDefaultRequestOptions(RequestOptions().transform(RoundedCorners(12)))
+                        .setDefaultRequestOptions(RequestOptions()
+                            .placeholder(R.drawable.default_newspaper)
+                            .transform(RoundedCorners(12)))
                         .load(article.imageUrl)
                         .into(newsImage)
                 }

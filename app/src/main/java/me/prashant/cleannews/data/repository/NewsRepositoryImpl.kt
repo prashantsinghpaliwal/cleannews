@@ -1,5 +1,6 @@
 package me.prashant.cleannews.data.repository
 
+import android.util.Log
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
@@ -48,6 +49,26 @@ class NewsRepositoryImpl
                     newsDao.insertAll(articles)
                     emit(Resource.Success(response.toDomain()))
                 } catch (e: Exception) {
+                    emit(Resource.Error(e))
+                }
+            }
+
+        override suspend fun getNewsBySearchQuery(
+            query: String,
+            page: Int,
+        ): Flow<Resource<NewsDomainModel>> =
+            flow {
+                emit(Resource.Loading(true))
+
+                try {
+                    val response =
+                        newsApiService.searchNews(
+                            apiKey = "541743e949524b4c9631d0fa0686e080",
+                            query = query,
+                        )
+                    emit(Resource.Success(response.toDomain()))
+                } catch (e: Exception) {
+                    Log.v("ErrorLog", "$query | e: $e, ${e.message}, ${e.localizedMessage}, ")
                     emit(Resource.Error(e))
                 }
             }

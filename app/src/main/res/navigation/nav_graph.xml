@@ -21,7 +21,17 @@
         android:id="@+id/navigation_search"
         android:name="me.prashant.cleannews.presentation.ui.search.SearchNewsListingFragment"
         android:label="Search"
-        tools:layout="@layout/fragment_search_news_listing" />
+        tools:layout="@layout/fragment_search_news_listing" >
+
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
+
+        <action
+            android:id="@+id/action_searchFragment_to_favoriteFragment"
+            app:destination="@id/navigation_favorite" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_favorite"

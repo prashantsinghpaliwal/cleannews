@@ -6,4 +6,5 @@ import me.prashant.cleannews.util.core.Resource
 
 interface NewsRepository {
     suspend fun getNews(page: Int): Flow<Resource<NewsDomainModel>>
+    suspend fun getNewsBySearchQuery(query: String, page: Int): Flow<Resource<NewsDomainModel>>
 }

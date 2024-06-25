@@ -7,13 +7,15 @@
     android:layout_marginHorizontal="16dp"
     android:layout_marginTop="16dp">
 
-    <ImageView
+    <me.prashant.cleannews.presentation.customview.RoundedImageView
         android:id="@+id/news_image"
         android:layout_width="72dp"
         android:layout_height="72dp"
+        card_view:cornerRadius="12dp"
+        android:scaleType="centerCrop"
         card_view:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@drawable/default_newspaper" />
 
     <TextView
         android:id="@+id/title"
