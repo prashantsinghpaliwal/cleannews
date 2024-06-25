@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
-import me.prashant.cleannews.data.di.DataModule
 import me.prashant.cleannews.databinding.ItemNewsBinding
 import me.prashant.cleannews.presentation.model.ArticleUiModel
 import javax.inject.Inject

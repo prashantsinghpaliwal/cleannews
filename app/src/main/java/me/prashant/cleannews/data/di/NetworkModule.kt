@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import me.prashant.cleannews.data.local.db.NewsDao
 import me.prashant.cleannews.data.remote.api.NewsApiService
 import me.prashant.cleannews.data.repository.NewsRepositoryImpl
 import me.prashant.cleannews.domain.repository.NewsRepository
@@ -14,7 +15,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataModule {
+object NetworkModule {
     @Provides
     @Singleton
     fun provideNewsApiService(): NewsApiService {
@@ -37,5 +38,8 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun provideNewsRepository(newsApiService: NewsApiService): NewsRepository = NewsRepositoryImpl(newsApiService)
+    fun provideNewsRepository(
+        newsApiService: NewsApiService,
+        dao: NewsDao,
+    ): NewsRepository = NewsRepositoryImpl(newsApiService, dao)
 }

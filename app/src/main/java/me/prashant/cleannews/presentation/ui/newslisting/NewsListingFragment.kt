@@ -1,7 +1,6 @@
 package me.prashant.cleannews.presentation.ui.newslisting
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -89,13 +88,11 @@ class NewsListingFragment : Fragment() {
                     }
 
                     is ArticleListState.Success -> {
-                        Log.v("UILayer", "Articles: $state")
                         newsAdapter.submitList(state.articles)
                         binding.progressBar.visibility = View.GONE
                     }
 
                     is ArticleListState.Error -> {
-                        Log.v("UILayer", "Articles: $state")
                         binding.progressBar.visibility = View.GONE
                     }
                 }

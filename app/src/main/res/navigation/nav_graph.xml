@@ -2,29 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/navigation_home">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_home"
         android:name="me.prashant.cleannews.presentation.ui.newslisting.NewsListingFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home_news_listing">
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/navigation_search" />
         <action
             android:id="@+id/action_homeFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
+            app:destination="@id/navigation_favorite" />
     </fragment>
 
     <fragment
-        android:id="@+id/searchFragment"
+        android:id="@+id/navigation_search"
         android:name="me.prashant.cleannews.presentation.ui.search.SearchNewsListingFragment"
         android:label="Search"
         tools:layout="@layout/fragment_search_news_listing" />
 
     <fragment
-        android:id="@+id/favoriteFragment"
+        android:id="@+id/navigation_favorite"
         android:name="me.prashant.cleannews.presentation.ui.favorite.FavoriteNewsListingFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favorite_news_listing" />

@@ -1,5 +1,6 @@
 package me.prashant.cleannews.data.mapper
 
+import me.prashant.cleannews.data.local.model.NewsEntity
 import me.prashant.cleannews.data.remote.model.ArticleDto
 import me.prashant.cleannews.data.remote.model.NewsResponseDto
 import me.prashant.cleannews.data.remote.model.SourceDto
@@ -30,4 +31,16 @@ fun SourceDto.toDomain(): SourceDomainModel =
     SourceDomainModel(
         id = this.id,
         name = this.name,
+    )
+
+fun NewsEntity.toDomain(): ArticleDomainModel =
+    ArticleDomainModel(
+        source = SourceDomainModel(id = "", name = this.sourceName),
+        author = this.author,
+        title = title,
+        description = description,
+        url = url,
+        urlToImage = urlToImage,
+        publishedAt = publishedAt,
+        content = this.content,
     )
