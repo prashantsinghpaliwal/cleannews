@@ -83,7 +83,7 @@ clean-news-app/
 ├── build.gradle
 ├── README.md
 └── ...
-
+```
 *Tech Stack*
 
 ##Kotlin: Programming language.
