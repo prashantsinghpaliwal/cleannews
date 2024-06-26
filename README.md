@@ -6,10 +6,12 @@ Users can navigate through Home, Search, and Favorite tabs and view details of i
 
 ## Screenshots
 
-![Home Screen](screenshots/01.png)
-![Search Screen](screenshots/02.png)
-![Favorites Screen](screenshots/03.png)
-![Detail Screen](screenshots/04.png)
+<p align="center">
+  <img src="screenshots/home_screen.png" alt="Home Screen" width="200"/>
+  <img src="screenshots/search_screen.png" alt="Search Screen" width="200"/>
+  <img src="screenshots/favorites_screen.png" alt="Favorites Screen" width="200"/>
+  <img src="screenshots/detail_screen.png" alt="Detail Screen" width="200"/>
+</p>
 
 ## Features
 
