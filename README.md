@@ -87,12 +87,19 @@ clean-news-app/
 **Tech Stack**
 
 **Kotlin**: Programming language.
+
 **MVVM**: Architecture pattern.
+
 **Hilt**: Dependency Injection.
+
 **Navigation Component**: For handling navigation.
+
 **Room**: For offline data storage.
+
 **Retrofit**: For network requests.
+
 **Coroutines**: For asynchronous operations.
+
 **Glide**: For image loading.
 
 **License**
