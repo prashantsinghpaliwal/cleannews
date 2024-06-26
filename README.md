@@ -85,3 +85,16 @@ clean-news-app/
 ├── build.gradle
 ├── README.md
 └── ...
+
+**Tech Stack**
+**Kotlin**: Programming language.
+**MVVM**: Architecture pattern.
+**Hilt**: Dependency Injection.
+**Navigation Component**: For handling navigation.
+**Room**: For offline data storage.
+**Retrofit**: For network requests.
+**Coroutines**: For asynchronous operations.
+**Glide**: For image loading.
+
+**License**
+This project is licensed under the MIT License - see the LICENSE file for details.
