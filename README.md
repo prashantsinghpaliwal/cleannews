@@ -7,10 +7,10 @@ Users can navigate through Home, Search, and Favorite tabs and view details of i
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/home_screen.png" alt="Home Screen" width="200"/>
-  <img src="screenshots/search_screen.png" alt="Search Screen" width="200"/>
-  <img src="screenshots/favorites_screen.png" alt="Favorites Screen" width="200"/>
-  <img src="screenshots/detail_screen.png" alt="Detail Screen" width="200"/>
+  <img src="screenshots/01.png" alt="Home Screen" width="200"/>
+  <img src="screenshots/02.png" alt="Search Screen" width="200"/>
+  <img src="screenshots/03.png" alt="Favorites Screen" width="200"/>
+  <img src="screenshots/04.png" alt="Detail Screen" width="200"/>
 </p>
 
 ## Features
