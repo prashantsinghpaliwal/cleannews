@@ -86,6 +86,8 @@ clean-news-app/
 ├── README.md
 └── ...
 
+```plaintext
+
 **Tech Stack**
 **Kotlin**: Programming language.
 **MVVM**: Architecture pattern.
