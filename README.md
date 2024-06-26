@@ -84,7 +84,7 @@ clean-news-app/
 ├── README.md
 └── ...
 ```
-**Tech Stack**
+# Tech Stack
 
 **Kotlin**: Programming language.
 
