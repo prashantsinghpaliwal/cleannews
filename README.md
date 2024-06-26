@@ -1,8 +1,6 @@
 # Clean News App
 
-Clean News App is an Android application built using the Clean Architecture with MVVM (Model-View-ViewModel) pattern. 
-The app fetches news articles from a remote API and displays them in a user-friendly manner. 
-Users can navigate through Home, Search, and Favorite tabs and view details of individual news articles.
+Clean News App is an Android application built using the Clean Architecture with MVVM (Model-View-ViewModel) pattern. The app fetches news articles from a remote API and displays them in a user-friendly manner. Users can navigate through Home, Search, and Favorite tabs and view details of individual news articles.
 
 ## Screenshots
 
@@ -86,17 +84,16 @@ clean-news-app/
 ├── README.md
 └── ...
 
-```plaintext
+*Tech Stack*
 
-**Tech Stack**
-**Kotlin**: Programming language.
-**MVVM**: Architecture pattern.
-**Hilt**: Dependency Injection.
-**Navigation Component**: For handling navigation.
-**Room**: For offline data storage.
-**Retrofit**: For network requests.
-**Coroutines**: For asynchronous operations.
-**Glide**: For image loading.
+##Kotlin: Programming language.
+##MVVM: Architecture pattern.
+##Hilt: Dependency Injection.
+##Navigation Component: For handling navigation.
+##Room: For offline data storage.
+##Retrofit: For network requests.
+##Coroutines: For asynchronous operations.
+##Glide: For image loading.
 
-**License**
+##License
 This project is licensed under the MIT License - see the LICENSE file for details.
